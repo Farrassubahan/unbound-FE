@@ -1,0 +1,29 @@
+.neon-badge {
+    background: #c6ff2b;
+    color: #000;
+    padding: 2px 10px;
+    font-size: 12px;
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow:
+        0 0 6px #c6ff2b,
+        0 0 10px #c6ff2b;
+}
+
+.neon-lime-btn {
+    background: linear-gradient(90deg, #bbff00, #d4ff4d);
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: 16px;
+    box-shadow: 0 0 8px rgba(180, 255, 60, 0.6),
+        0 0 16px rgba(180, 255, 60, 0.3);
+    transition: 0.2s ease;
+}
+
+.neon-lime-btn:hover {
+    background: linear-gradient(90deg, #ccff33, #e4ff66);
+    box-shadow: 0 0 12px rgba(200, 255, 60, 0.8),
+        0 0 20px rgba(200, 255, 60, 0.4);
+    transform: translateY(-1px);
+}

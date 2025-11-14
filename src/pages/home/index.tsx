@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
                     <h2 className="font-semibold">Post 2</h2>
                     <p>Ini contoh posting di Home Page.</p>
                 </Card>
-            </div>
+            </div> 
         </MainLayout>
     );
 };
