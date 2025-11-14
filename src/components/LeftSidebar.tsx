@@ -10,11 +10,15 @@ const LeftSidebar: React.FC<Props> = ({ isMobile, onClose }) => {
     return (
         <aside
             className={`
-                flex flex-col w-64 h-screen bg-white border-r p-6 z-50
-                transition-transform duration-300
-                ${isMobile ? "fixed top-0 left-0 translate-x-0" : "hidden md:flex"}
-            `}
+        flex flex-col w-64 h-screen bg-white border-r p-6 z-50
+        transition-transform duration-300
+        ${isMobile
+                    ? "fixed top-0 left-0 translate-x-0"
+                    : "hidden md:flex fixed top-0 left-0"
+                }
+    `}
         >
+
             {/* === WRAPPER YANG BISA SCROLL === */}
             <div className="flex-1 overflow-y-auto pr-2">
 
