@@ -42,6 +42,7 @@
 
     border: 1px solid #bbff00;
 }
+
 .neon-share-thoughts-box .title {
     color: #4CAF50;
     font-size: 0.875rem;
@@ -49,12 +50,14 @@
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
+
 .neon-share-thoughts-box .prompt {
     color: #1a4206;
     font-size: 1.125rem;
     font-weight: 700;
     cursor: pointer;
 }
+
 .neon-share-thoughts-box .prompt .sparkle-icon {
     color: #2e7d32;
     margin-left: 0.25rem;
@@ -65,7 +68,7 @@
 .neon-notification-dot {
     position: absolute;
     top: 2px;
-    
+
     right: 2px;
     width: 8px;
     height: 8px;
@@ -76,3 +79,42 @@
         0 0 3px #c6ff2b,
         0 0 5px #c6ff2b;
 }
+
+/* profile */
+.badge-storyteller {
+    background: #4731a8;
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow:
+        0 0 5px rgba(169, 150, 255, 0.6),
+        0 0 10px rgba(169, 150, 255, 0.4);
+}
+
+.badge-supportive {
+    background: #593cdb;
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow:
+        0 0 5px rgba(142, 210, 255, 0.6),
+        0 0 10px rgba(142, 210, 255, 0.4);
+}
+
+.badge-creative {
+    background: #6848f4;
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow:
+        0 0 5px rgba(255, 158, 207, 0.6),
+        0 0 10px rgba(255, 158, 207, 0.4);
+}
+
+
