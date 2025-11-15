@@ -1,6 +1,8 @@
 import React from 'react';
 import MainLayout from '../../layouts/MainLayout';
 import { Sparkles, MessageSquare, Share2, Settings } from 'lucide-react';
+import "../../styles/profile.css";
+
 
 const ProfilePage: React.FC = () => {
     return (
@@ -8,9 +10,10 @@ const ProfilePage: React.FC = () => {
             <div className="w-full flex flex-col items-center pb-20 bg-[#f2f3f7]">
 
                 {/* HEADER PROFILE */}
-                <div className="w-full h-64 bg-gradient-to-b from-purple-500 to-purple-600 
-                    rounded-b-3xl flex flex-col items-center justify-center text-white 
-                    relative z-30">
+                <div className="w-full h-64 
+    bg-gradient-to-r from-purple-600 to-indigo-300
+    rounded-b-3xl flex flex-col items-center justify-center text-white 
+    relative z-30 shadow-lg shadow-purple-300/40">
 
                     {/* SETTINGS BUTTON */}
                     <button className="absolute top-5 right-5 p-2 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur-sm transition">
@@ -26,9 +29,10 @@ const ProfilePage: React.FC = () => {
                     <p className="text-sm text-purple-200">@emma.unbound</p>
 
                     <div className="flex gap-3 mt-3">
-                        <div className="bg-white/20 px-4 py-1 rounded-full text-sm">Level 12</div>
-                        <div className="bg-white/20 px-4 py-1 rounded-full text-sm">2,450 XP</div>
+                        <div className="profile-badge">Level 12</div>
+                        <div className="profile-badge">2,450 XP</div>
                     </div>
+
 
                     <p className="mt-4 w-[65%] text-center text-purple-200 text-sm leading-relaxed">
                         Creative soul sharing stories about mental wellness, art, and
