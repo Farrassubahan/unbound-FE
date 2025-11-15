@@ -1,5 +1,6 @@
 import React from "react";
 import { Home, Compass, Flame, User, Plus, Settings, LogOut, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 interface Props {
     isMobile?: boolean;
@@ -10,16 +11,13 @@ const LeftSidebar: React.FC<Props> = ({ isMobile, onClose }) => {
     return (
         <aside
             className={`
-        flex flex-col w-64 h-screen bg-white border-r p-6 z-50
-        transition-transform duration-300
-        ${isMobile
-                    ? "fixed top-0 left-0 translate-x-0"
-                    : "hidden md:flex fixed top-0 left-0"
-                }
-    `}
+                flex flex-col w-64 h-screen bg-white border-r p-6 z-50
+                transition-transform duration-300
+                ${isMobile ? "fixed top-0 left-0 translate-x-0" : "hidden md:flex fixed top-0 left-0"}
+            `}
         >
 
-            {/* === WRAPPER YANG BISA SCROLL === */}
+            {/* === WRAPPER --- SCROLLABLE === */}
             <div className="flex-1 overflow-y-auto pr-2">
 
                 {isMobile && (
@@ -42,42 +40,63 @@ const LeftSidebar: React.FC<Props> = ({ isMobile, onClose }) => {
                 {/* MENU */}
                 <nav className="flex flex-col gap-3 text-[15px]">
 
-                    <button className="
-                        flex items-center gap-3 px-4 py-3 rounded-2xl text-white
-                        bg-gradient-to-r from-purple-600 to-indigo-500 
-                        shadow-lg shadow-purple-300/40
-                    ">
-                        <Home size={20} color="white" />
+                    {/* HOME */}
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            `flex items-center gap-3 px-4 py-3 rounded-2xl transition ${isActive
+                                ? "text-white bg-gradient-to-r from-purple-600 to-indigo-500 shadow-lg shadow-purple-300/40"
+                                : "bg-gray-50 hover:bg-gray-100 border border-gray-200"
+                            }`
+                        }
+                    >
+                        <Home size={20} />
                         Home
-                    </button>
+                    </NavLink>
 
-                    <button className="
-                        flex items-center gap-3 px-4 py-3 rounded-2xl 
-                        bg-gray-50 hover:bg-gray-100 transition
-                        border border-gray-200
-                    ">
+                    {/* EXPLORE */}
+                    <NavLink
+                        to="/explore"
+                        className={({ isActive }) =>
+                            `flex items-center gap-3 px-4 py-3 rounded-2xl transition ${isActive
+                                ? "text-white bg-gradient-to-r from-purple-600 to-indigo-500 shadow-lg shadow-purple-300/40"
+                                : "bg-gray-50 hover:bg-gray-100 border border-gray-200"
+                            }`
+                        }
+                    >
                         <Compass size={20} />
                         Explore
-                    </button>
+                    </NavLink>
 
-                    <button className="
-                        flex items-center gap-3 px-4 py-3 rounded-2xl 
-                        bg-gray-50 hover:bg-gray-100 transition
-                        border border-gray-200
-                    ">
+                    {/* TRENDING */}
+                    <NavLink
+                        to="/trending"
+                        className={({ isActive }) =>
+                            `flex items-center gap-3 px-4 py-3 rounded-2xl transition ${isActive
+                                ? "text-white bg-gradient-to-r from-purple-600 to-indigo-500 shadow-lg shadow-purple-300/40"
+                                : "bg-gray-50 hover:bg-gray-100 border border-gray-200"
+                            }`
+                        }
+                    >
                         <Flame size={20} />
                         Trending
-                    </button>
+                    </NavLink>
 
-                    <button className="
-                        flex items-center gap-3 px-4 py-3 rounded-2xl 
-                        bg-gray-50 hover:bg-gray-100 transition
-                        border border-gray-200
-                    ">
+                    {/* PROFILE */}
+                    <NavLink
+                        to="/profile"
+                        className={({ isActive }) =>
+                            `flex items-center gap-3 px-4 py-3 rounded-2xl transition ${isActive
+                                ? "text-white bg-gradient-to-r from-purple-600 to-indigo-500 shadow-lg shadow-purple-300/40"
+                                : "bg-gray-50 hover:bg-gray-100 border border-gray-200"
+                            }`
+                        }
+                    >
                         <User size={20} />
                         Profile
-                    </button>
+                    </NavLink>
 
+                    {/* NEW POST */}
                     <button className="flex items-center gap-3 mt-2 neon-lime-btn">
                         <Plus size={20} />
                         New Post
@@ -86,6 +105,7 @@ const LeftSidebar: React.FC<Props> = ({ isMobile, onClose }) => {
 
                 <div className="my-8 border-t" />
 
+                {/* TOPICS */}
                 <div>
                     <h2 className="text-xs font-semibold uppercase text-gray-500 tracking-wide mb-3">
                         Your Topics
@@ -101,7 +121,7 @@ const LeftSidebar: React.FC<Props> = ({ isMobile, onClose }) => {
                 </div>
             </div>
 
-            {/* FOOTER (TIDAK IKUT SCROLL) */}
+            {/* === FOOTER === */}
             <div className="flex flex-col gap-4 text-[15px] pt-4 border-t">
                 <button className="flex items-center gap-3 text-gray-700 hover:text-gray-900">
                     <Settings size={20} />

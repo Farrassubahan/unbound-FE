@@ -1,8 +1,8 @@
-// C:\Users\farras\Documents\belajar-react\unbound\src\pages\home\index.tsx
+
 
 import React from 'react';
-import MainLayout from '../../layouts/MainLayout'; // Sesuaikan path MainLayout
-import Header from '../../components/Header'; // Import komponen Header yang sudah dipisahkan
+import MainLayout from '../../layouts/MainLayout'; 
+import Header from '../../components/Header'; 
 import { Sparkles, MessageSquare, Share2, User, Sun } from 'lucide-react';
 
 // --- Komponen ShareThoughts (Kotak Input) ---
