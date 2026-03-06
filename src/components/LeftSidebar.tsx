@@ -18,7 +18,7 @@ const LeftSidebar: React.FC<Props> = ({ isMobile, onClose }) => {
         >
 
             {/* === WRAPPER --- SCROLLABLE === */}
-            <div className="flex-1 overflow-y-auto pr-2">
+            <div className="flex-1 overflow-y-auto pr-2 scrollbar-hide">
 
                 {isMobile && (
                     <button

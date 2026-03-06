@@ -12,7 +12,7 @@ const RightSidebar: React.FC = () => {
             "
         >
             {/* Scroll hanya di bagian dalam */}
-            <div className="flex-1 overflow-y-auto pr-2">
+            <div className="flex-1 overflow-y-auto pr-2 scrollbar-hide">
 
                 {/* TRENDING */}
                 <div>
