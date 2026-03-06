@@ -8,47 +8,60 @@ const Header: React.FC = () => {
     const activeItem = 'For You';
 
     return (
-        // Wrapper utama Header dengan sticky dan border bawah
-        <div className="sticky top-0 bg-white z-10 border-b border-gray-200">
-            {/* Baris 1: Logo dan Ikon Kanan (Search & Notification) */}
-            <div className="flex justify-between items-center py-3 px-4 sm:px-0">
-                {/* Logo Unbound */}
-                <div className="flex items-center space-x-1">
-                    <Zap className="w-6 h-6 text-purple-600" />
-                    <span className="text-xl font-bold text-gray-800">Unbound</span>
-                </div>
+        <header className="sticky top-14 md:top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-gray-200 shadow-sm transition-all duration-300">
 
-                <div className="flex space-x-4 text-gray-600">
-                    <Search className="w-6 h-6 hover:text-purple-600 cursor-pointer" />
+            {/* Container */}
+            <div className="max-w-6xl mx-auto">
 
-                    {/* Bungkus Ikon Bell dan Titik Notifikasi dalam satu DIV RELATIF */}
-                    <div className="relative cursor-pointer hover:text-purple-600">
-                        {/* 1. Ikon Bell */}
-                        <Bell className="w-6 h-6" />
+                {/* Row 1: Hide on mobile as MainLayout has one */}
+                <div className="hidden md:flex justify-between items-center py-3 px-4">
 
-                        {/* 2. Titik Notifikasi Neon (span dengan posisi absolute) */}
-                        <span className="neon-notification-dot"></span>
+                    {/* Logo */}
+                    <div className="flex items-center space-x-2">
+                        <Zap className="w-6 h-6 text-purple-600" />
+                        <span className="text-xl font-bold text-gray-800">
+                            Unbound
+                        </span>
+                    </div>
+
+                    {/* Right Icons */}
+                    <div className="flex items-center space-x-4 text-gray-600">
+
+                        <Search className="w-6 h-6 hover:text-purple-600 cursor-pointer transition" />
+
+                        {/* Notification */}
+                        <div className="relative cursor-pointer hover:text-purple-600 transition">
+                            <Bell className="w-6 h-6" />
+
+                            {/* Notification Dot */}
+                            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-purple-500 rounded-full animate-pulse"></span>
+                        </div>
+
                     </div>
                 </div>
 
+                {/* Row 2 Navigation */}
+                <nav className="flex space-x-6 overflow-x-auto whitespace-nowrap px-4 py-2 md:py-0">
+
+                    {navItems.map((item) => (
+                        <a
+                            key={item}
+                            href="#"
+                            className={`text-sm font-semibold pb-2 md:pb-3 transition 
+                            ${item === activeItem
+                                    ? 'text-purple-600 border-b-2 border-purple-600'
+                                    : 'text-gray-500 hover:text-gray-800'
+                                }`}
+                        >
+                            {item}
+                        </a>
+                    ))}
+
+                </nav>
+
             </div>
 
-            {/* Baris 2: Navigasi (For You, Trending, Topics) - Scrollable untuk Mobile */}
-            <div className="flex space-x-4 overflow-x-auto whitespace-nowrap px-4 sm:px-0 pb-1">
-                {navItems.map((item) => (
-                    <a
-                        key={item}
-                        href="#"
-                        className={`text-sm font-semibold pb-3 transition duration-150 ${item === activeItem
-                            ? 'text-purple-600 border-b-2 border-purple-600'
-                            : 'text-gray-500 hover:text-gray-800'
-                            }`}
-                    >
-                        {item}
-                    </a>
-                ))}
-            </div>
-        </div>
+        </header>
     );
 };
 

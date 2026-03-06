@@ -9,7 +9,7 @@ import { Sparkles, MessageSquare, Share2, User, Sun } from 'lucide-react';
 // Ditempatkan di sini karena tidak perlu dipisahkan
 const ShareThoughts: React.FC = () => {
     return (
-        <div className="mb-6 px-4 sm:px-0">
+        <div className="mt-6 mb-6 px-4 sm:px-0">
             <div className="neon-share-thoughts-box">
                 <p className="text-sm font-semibold text-lime-800 mb-1">
                     What's on your mind?
